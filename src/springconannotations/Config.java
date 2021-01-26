@@ -8,6 +8,7 @@ package springconannotations;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 /**
  *
@@ -15,6 +16,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration //Nos sirve para prescindir del xml de configuracion
 @ComponentScan("springconannotations") //Para escanear el o los paquetes 
+@PropertySource("classpath:datosEmpresa.propiedades")
 public class Config {
     
     //Definir el bean para InformeFinancieroCompras

@@ -21,16 +21,16 @@ import org.springframework.stereotype.Component;
 public class ComercialExperimentado implements Empleados {
  
    //Ejecutar codigo despues de crear el bean
-    @PostConstruct //anotacion para que el metodo se ejecute justo despues de crear el bean
-    public void ejecutarDespuesCreacion(){
-        System.out.println("Aqui va el codigo a ejecutar despues de crear el bean");
-    }
+//    @PostConstruct //anotacion para que el metodo se ejecute justo despues de crear el bean
+//    public void ejecutarDespuesCreacion(){
+//        System.out.println("Aqui va el codigo a ejecutar despues de crear el bean");
+//    }
     
    //Ejecutar codigo antes de apagar el contenedor spring
-    @PreDestroy // anotacion para que el metodo se ejecute justo antes de apagar el contenedor
-    public void ejecutarAntesDestruccion(){
-    System.out.println("Aqui va el codigo a ejecutar antes de apagar contenedor spring");
-    }
+//    @PreDestroy // anotacion para que el metodo se ejecute justo antes de apagar el contenedor
+//    public void ejecutarAntesDestruccion(){
+//    System.out.println("Aqui va el codigo a ejecutar antes de apagar contenedor spring");
+//    }
     //Las annotations PostContruct y PreDestroy no pueden trabajar en prototype
     
 
