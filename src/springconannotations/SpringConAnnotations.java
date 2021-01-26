@@ -5,6 +5,7 @@
  */
 package springconannotations;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -20,8 +21,11 @@ public class SpringConAnnotations {
         // TODO code application logic here
        
         //leer xml de configuracion
-        ClassPathXmlApplicationContext contexto = new ClassPathXmlApplicationContext("applicationContext.xml");
+        //ClassPathXmlApplicationContext contexto = new ClassPathXmlApplicationContext("applicationContext.xml");
 
+        //Leer class de configuracion
+        AnnotationConfigApplicationContext contexto = new AnnotationConfigApplicationContext(Config.class);
+        
         //Pedir un bean al contenedor
         Empleados ups = contexto.getBean("ComercialExperimentado",Empleados.class);
         //Usar el bean

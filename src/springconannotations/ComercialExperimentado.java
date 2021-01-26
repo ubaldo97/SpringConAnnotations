@@ -5,6 +5,8 @@
  */
 package springconannotations;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
@@ -15,10 +17,22 @@ import org.springframework.stereotype.Component;
  * @author ups_c
  */
 @Component("ComercialExperimentado")
-@Scope("prototype")// Annotation para cambiar el patron de diseño predeterminado sin usar el xml
+//@Scope("prototype")// Annotation para cambiar el patron de diseño predeterminado sin usar el xml
 public class ComercialExperimentado implements Empleados {
  
-   
+   //Ejecutar codigo despues de crear el bean
+    @PostConstruct //anotacion para que el metodo se ejecute justo despues de crear el bean
+    public void ejecutarDespuesCreacion(){
+        System.out.println("Aqui va el codigo a ejecutar despues de crear el bean");
+    }
+    
+   //Ejecutar codigo antes de apagar el contenedor spring
+    @PreDestroy // anotacion para que el metodo se ejecute justo antes de apagar el contenedor
+    public void ejecutarAntesDestruccion(){
+    System.out.println("Aqui va el codigo a ejecutar antes de apagar contenedor spring");
+    }
+    //Las annotations PostContruct y PreDestroy no pueden trabajar en prototype
+    
 
     //1. La anotacion autowired puede ser omitida apartir 
     //de spring 4.3 si el bean solo tiene un constructor.
